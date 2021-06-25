@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent cards using CSS</title>
+</head>
+<style>
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 70px 50px;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+
+
+    body {
+        margin: 0%;
+        padding: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(37, 1, 37);
+        min-height: 100vh;
+    }
+
+    body::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(rgb(241, 14, 166), rgb(25, 10, 110));
+        clip-path: circle(20% at right 60%);
+    }
+
+    body::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(rgb(212, 101, 223), rgb(25, 10, 110));
+        clip-path: circle(15% at 30% 5%);
+    }
+
+    .container .card {
+        position: relative;
+        height: 350px;
+        width: 254px;
+        flex-direction: row;
+
+        border-radius: 15px;
+        padding: 23px;
+        margin: 25px 15px;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        box-shadow: 20px 20px, 50px, rgba(0, 0, 0, 0.7);
+        border-top: 1px solid grey;
+        border-left: 1px solid grey;
+        backdrop-filter: blur(5px);
+
+
+    }
+
+    .container .card .text {
+        padding: 8px;
+        text-align: center;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 1%;
+    }
+
+    .container .card:hover .text {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .text h1 {
+        position: absolute;
+        top: -52px;
+        color: white;
+        z-index: 1;
+    }
+
+    .text p {
+
+        color: white;
+        font-size: 15px;
+        top: 30px;
+        margin: 8px;
+        padding: 8px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="text">
+                <h1>CSS Cards</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus itaque amet rem dolor magni
+                    nesciunt accusantium reiciendis dignissimos autem illo totam in dolorem sapiente illum Lorem ipsum,
+                    dolor sit amet consectetur adipisicing elit. Iste, reprehenderit. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Ab voluptatum placeat est! Assumenda, veritatis.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="text">
+                <h1>CSS Cards</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus itaque amet rem dolor magni
+                    nesciunt accusantium reiciendis dignissimos autem illo totam in dolorem sapiente illum Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Dolore, Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Cum, repellendus corrupti! Harum, fuga facilis?</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="text">
+                <h1>CSS Cards</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus itaque amet rem dolor magni
+                    nesciunt accusantium reiciendis dignissimos autem illo totam in dolorem sapiente illum Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Quibusdam, ducimus! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Aspernatur, tempore assumenda? Labore, architecto dolorem!
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+        });
+    </script>
+</body>
+
+</html>
