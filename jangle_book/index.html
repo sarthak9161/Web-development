@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <title>Parallax Srcolling</title>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" id="logo">Tiger Park</a>
+        <ul>
+            <li><a href="#" class="a1">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </header>
+    <section id="text">
+        <h2 id="text2"><span>It's time to start a new</span><br> &nbsp; &nbsp;Adventure</h2>
+        <img src="bird1.png" id="bird1" >
+        <img src="bird2.png" id="bird2">
+        <img src="forest.png" id="forest">
+        <a href="#" id="btn">Explore</a>
+        <img src="rocks.png" id="rocks" >
+        <img src="water.png" id="water" >
+    </section>
+    
+    <div class="para">
+        <h1>Welcome to Jungle Safari</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloremque assumenda sapiente voluptatum culpa excepturi eligendi nam ipsa modi tempore cupiditate, quae tenetur cum ea sequi similique minus laudantium fugiat voluptate nemo amet velit? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ab? Id ipsa corporis reiciendis nostrum sed voluptates? Culpa labore alias expedita, sint distinctio, consequuntur delectus, quibusdam a similique vel numquam! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam, recusandae consequatur cumque facilis maxime soluta ducimus dignissimos consectetur repudiandae autem dolore dolores voluptatibus qui a totam assumenda sequi provident.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloremque assumenda sapiente voluptatum culpa excepturi eligendi nam ipsa modi tempore cupiditate, quae tenetur cum ea sequi similique minus laudantium fugiat voluptate nemo amet velit? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ab? Id ipsa corporis reiciendis nostrum sed voluptates? Culpa labore alias expedita, sint distinctio, consequuntur delectus, quibusdam a similique vel numquam! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam, recusandae consequatur cumque facilis maxime soluta ducimus dignissimos consectetur repudiandae autem dolore dolores voluptatibus qui a totam assumenda sequi provident.Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloremque assumenda sapiente voluptatum culpa excepturi eligendi nam ipsa modi tempore cupiditate, quae tenetur cum ea sequi similique minus laudantium fugiat voluptate nemo amet velit? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ab? Id ipsa corporis reiciendis nostrum sed voluptates? Culpa labore alias expedita, sint distinctio, consequuntur delectus, quibusdam a similique vel numquam! <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam, recusandae consequatur cumque facilis maxime soluta ducimus dignissimos consectetur repudiandae autem dolore dolores voluptatibus qui a totam assumenda sequi provident.</p>
+    </div>
+    <!-- <footer class="form"> -->
+        <form action="#">
+            <div class="form">
+                <h2>Book Your Trip</h2>
+
+                <label for="name">Enter your name</label>
+                <input type="text" name="name" id="name1" autocomplete="off">
+            </div>
+            <div class="form">
+
+                <label for="number">Enter your Phone No.</label>
+                <input type="text" name="number" id="contactNo" autocomplete="off">
+            </div>
+            <div class="form">
+
+                <label for="email">Enter your Mail Id</label>
+                <input type="email" name="email" id="email" autocomplete="off">
+            </div>
+            <div class="form">
+                <button type="submit" onclick="store()" >Submit</button>
+            </div>
+        </form>
+    <!-- </footer> -->
+    <script>
+        var text=document.getElementById('text');
+        var bird1=document.getElementById('bird1');
+        var btn=document.getElementById('btn');
+        var bird2=document.getElementById('bird2');
+        var forest=document.getElementById('forest');
+        var rocks=document.getElementById('rocks');
+        var water=document.getElementById('water');
+        var header=document.getElementById('header');
+
+        window.addEventListener('scroll',function(){
+
+            let value=window.scrollY;
+
+            text.style.top=50+value*-0.5+'%';
+            bird1.style.top=value*2 +'px';
+            bird1.style.left=value* -1 +'px';
+            bird2.style.top=value* -1.5 +'px';
+            bird2.style.left=value*-4 +'px';
+            btn.style.marginTop=value+1.5+'px';
+            rocks.style.top=value*-0.10+'px';
+            forest.style.top=value+0.25+'px';
+            header.style.top=value*0.4+'px;'
+        })
+    </script>
+</body>
+
+</html>
